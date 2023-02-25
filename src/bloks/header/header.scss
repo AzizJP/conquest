@@ -1,4 +1,4 @@
-$padding: 20px;
+$padding_header: 20px;
 
 .header {
   display: grid;
@@ -6,8 +6,8 @@ $padding: 20px;
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
   row-gap: 10px;
-  padding: $padding;
-  width: calc(100% - ($padding * 2));
+  padding: $padding_header;
+  width: calc(100% - ($padding_header * 2));
 
   &__menu {
     grid-area: 2 / 1 / 2 / 4;
@@ -73,7 +73,7 @@ $padding: 20px;
 @media screen and (min-width: $breakpoint_laptop) {
   .header {
     max-width: $max_width;
-    padding: 31px $padding 28px;
+    padding: 31px $padding_header 28px;
     align-self: center;
 
     &__menu {
