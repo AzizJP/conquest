@@ -1,0 +1,93 @@
+$padding: 20px;
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  row-gap: 10px;
+  padding: $padding;
+  width: calc(100% - ($padding * 2));
+
+  &__menu {
+    grid-area: 2 / 1 / 2 / 4;
+    justify-self: center;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      text-decoration: none;
+      color: $color_dark;
+      transition: opacity linear 0.2s;
+    }
+  }
+
+  &__buttons {
+    grid-area: 1 / 3 / 1 / 3;
+    justify-self: end;
+    display: flex;
+    gap: 23px;
+  }
+
+  &__button {
+    border: none;
+    cursor: pointer;
+    transition: opacity linear 0.2s;
+
+    &_search {
+      background: url(../../images/search.svg) no-repeat
+        center/contain;
+      width: 16px;
+      height: 16px;
+    }
+
+    &_like {
+      background: url(../../images/like.svg) no-repeat center/contain;
+      width: 19px;
+      height: 16px;
+    }
+
+    &_basket {
+      background: url(../../images/basket.svg) no-repeat
+        center/contain;
+      width: 18px;
+      height: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_tablet) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    &__menu {
+      gap: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_laptop) {
+  .header {
+    max-width: $max_width;
+    padding: 31px $padding 28px;
+    align-self: center;
+
+    &__menu {
+      gap: 65px;
+
+      &-item:hover {
+        opacity: 0.6;
+        transition: opacity linear 0.2s;
+      }
+    }
+
+    &__button:hover {
+      opacity: 0.6;
+      transition: opacity linear 0.2s;
+    }
+  }
+}

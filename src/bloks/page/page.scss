@@ -1,0 +1,27 @@
+$color_dark: #555248;
+$color_dark_2: #444240;
+$color_black: #1b1a17;
+$color_grey: rgba(27, 26, 23, 0.82);
+$color_grey_2: rgba(255, 255, 255, 0.75);
+$breakpoint_mobile: 320px;
+$breakpoint_tablet: 600px;
+$breakpoint_laptop: 1024px;
+$max_width: 1200px;
+
+@mixin serifFontSettings($ff, $fw, $fs, $lh) {
+  font-family: $ff, 'Times New Roman', Times, serif;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Roboto', Verdana, Tahoma, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color_black;
+}

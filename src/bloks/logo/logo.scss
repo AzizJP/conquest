@@ -1,0 +1,20 @@
+.logo {
+  grid-area: 1 / 1 / 1 / 1;
+  display: flex;
+  align-self: start;
+  align-items: center;
+  gap: 2px;
+
+  &__icon {
+    background: url(../../images/logo-black.png) no-repeat
+      center/contain;
+    width: 26px;
+    height: 26px;
+  }
+
+  &__title {
+    margin: 0;
+    @include serifFontSettings('Playfair Display', 400, 12px, 16px);
+    color: $color_dark;
+  }
+}
