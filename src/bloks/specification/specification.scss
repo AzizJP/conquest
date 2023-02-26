@@ -1,0 +1,153 @@
+$specification_padding: 20px;
+
+.specification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: $color_card_background;
+  overflow: hidden;
+
+  &__background-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    background-color: $color_beige;
+    z-index: 1;
+  }
+
+  &__background-right {
+    position: absolute;
+    right: 0;
+    border: 1px solid $color_brown;
+    border-radius: 50%;
+    z-index: 1;
+
+    &_small {
+      top: -160px;
+      right: -160px;
+      width: 365px;
+      height: 365px;
+    }
+
+    &_big {
+      bottom: -270px;
+      right: -550px;
+      width: 745px;
+      height: 745px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: $specification_padding $specification_padding;
+    width: calc(100% - ($specification_padding * 2));
+    max-width: $max_width;
+    z-index: 2;
+  }
+
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 521px;
+  }
+
+  &__pagination {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__counter {
+    margin: 0;
+    @include serifFontSettings('Prata', 400, 12px, 16px);
+  }
+
+  &__arrow {
+    background-color: $color_card_background;
+    border: none;
+    transition: opacity linear 0.2s;
+    cursor: pointer;
+
+    &_left {
+      background: url(../../images/arrow-left.svg) no-repeat
+        center/contain;
+    }
+
+    &_right {
+      background: url(../../images/arrow-right.svg) no-repeat
+        center/contain;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 376px;
+  }
+
+  &__text {
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+    line-height: 150%;
+    color: $color_dark_2;
+  }
+
+  &__button {
+    background-color: $color_brown;
+  }
+}
+
+@media screen and (min-width: $breakpoint_tablet) {
+  .specification {
+    &__text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_laptop) {
+  .specification {
+    &__wrapper {
+      flex-direction: row;
+      justify-content: center;
+      gap: 70px;
+    }
+
+    &__banner {
+      align-items: end;
+    }
+
+    &__pagination {
+      margin-right: 83px;
+    }
+
+    &__description {
+      align-items: start;
+      gap: 38px;
+    }
+
+    &__text {
+      text-align: start;
+      margin-bottom: 7px;
+    }
+
+    &__arrow:hover {
+      opacity: 0.6;
+      transition: opacity linear 0.2s;
+    }
+  }
+}

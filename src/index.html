@@ -30,7 +30,9 @@
         <button
           type="button"
           class="header__button header__button_like"
-        ></button>
+        >
+          <p class="header__button_like-counter">1</p>
+        </button>
         <button
           type="button"
           class="header__button header__button_basket"
@@ -41,39 +43,39 @@
 
     <!-- Main - start -->
     <main class="main">
-      <!-- Bunner - start -->
-      <section class="bunner">
-        <div class="bunner__description">
-          <h1 class="bunner__title">Весна/Лето 2019</h1>
-          <h3 class="bunner__subtitle">Коллекция</h3>
-          <p class="bunner__text">
+      <!-- banner - start -->
+      <section class="banner">
+        <div class="banner__description">
+          <h1 class="banner__title">Весна/Лето 2019</h1>
+          <h3 class="banner__subtitle">Коллекция</h3>
+          <p class="banner__text">
             Швейцарские часы в наличии в Москве <br />
             и с доставкой по всему миру
           </p>
-          <button type="button" class="bunner__button">
+          <button type="button" class="button banner__button">
             Смотреть каталог
           </button>
         </div>
-        <div class="bunner__ellipse"></div>
-        <div class="bunner__presentation">
+        <div class="banner__ellipse"></div>
+        <div class="banner__presentation">
           <img
             src="./images/watch-main.svg"
             alt="Изображение наручных часов"
-            class="bunner__image"
+            class="banner__image"
           />
           <p
-            class="bunner__presentation_text bunner__presentation_text-top"
+            class="banner__presentation_text banner__presentation_text-top"
           >
             22 000 &#8381;
           </p>
           <p
-            class="bunner__presentation_text bunner__presentation_text-down"
+            class="banner__presentation_text banner__presentation_text-down"
           >
             28 мм диаметр
           </p>
         </div>
       </section>
-      <!-- Bunner - end -->
+      <!-- banner - end -->
 
       <!-- Goods - start -->
       <section class="goods">
@@ -126,7 +128,49 @@
       <!-- Goods - end -->
 
       <!-- Specification - start -->
-      <section class="specification"></section>
+      <section class="specification">
+        <div class="specification__background-left"></div>
+        <div class="specification__wrapper">
+          <div class="specification__banner">
+            <img
+              src="./images/photo-banner.jpg"
+              alt="Изображение циферблата"
+              class="specification__image"
+            />
+            <div class="specification__pagination">
+              <button
+                type="button"
+                class="specification__arrow specification__arrow_left"
+              ></button>
+              <p class="specification__counter">01</p>
+              <button
+                type="button"
+                class="specification__arrow specification__arrow_right"
+              ></button>
+            </div>
+          </div>
+          <div class="specification__description">
+            <h2 class="title">Подлинное качество</h2>
+            <p class="specification__text">
+              Все часы производятся в Швейцарии и имеют сертификаты
+              качества. Настоящие швейцарские часы — это предмет
+              гордости и престижа.
+            </p>
+            <button
+              type="button"
+              class="button specification__button"
+            >
+              СМОТРЕТЬ КАТАЛОГ
+            </button>
+          </div>
+        </div>
+        <div
+          class="specification__background-right specification__background-right_small"
+        ></div>
+        <div
+          class="specification__background-right specification__background-right_big"
+        ></div>
+      </section>
       <!-- Specification - end -->
 
       <!-- Subscribe - start -->

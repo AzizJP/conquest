@@ -45,9 +45,25 @@ $padding_header: 20px;
     }
 
     &_like {
+      position: relative;
       background: url(../../images/like.svg) no-repeat center/contain;
       width: 19px;
       height: 16px;
+
+      &-counter {
+        display: block;
+        position: absolute;
+        top: -5px;
+        right: -8px;
+        margin: 0;
+        width: 13px;
+        height: 13px;
+        background-color: $color_beige_2;
+        border-radius: 50%;
+        font-size: 8px;
+        line-height: 13px;
+        text-align: center;
+      }
     }
 
     &_basket {

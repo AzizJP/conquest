@@ -6,7 +6,7 @@ $padding__banner: 85px;
   border-radius: $wth 0 0 $wth;
 }
 
-.bunner {
+.banner {
   display: flex;
   position: relative;
   padding-left: 10px;
@@ -65,18 +65,7 @@ $padding__banner: 85px;
   }
 
   &__button {
-    padding: 15px 20px;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 12px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: white;
     background-color: $color_dark_2;
-    border: none;
-    max-width: 205px;
-    transition: background-color linear 0.2s;
-    cursor: pointer;
   }
 
   &__presentation {
@@ -135,7 +124,7 @@ $padding__banner: 85px;
 }
 
 @media screen and (min-width: $breakpoint_tablet) {
-  .bunner {
+  .banner {
     padding-left: 40px;
 
     &__ellipse {
@@ -156,17 +145,11 @@ $padding__banner: 85px;
       font-size: 12px;
       line-height: 18px;
     }
-
-    &__button {
-      padding: 20px 30px;
-      font-size: 12px;
-      line-height: 14px;
-    }
   }
 }
 
 @media screen and (min-width: $breakpoint_tablet_2) {
-  .bunner {
+  .banner {
     padding: 0 40px;
 
     &__ellipse {
@@ -216,7 +199,7 @@ $padding__banner: 85px;
 }
 
 @media screen and (min-width: $breakpoint_laptop) {
-  .bunner {
+  .banner {
     padding: 0 $padding__banner;
     width: calc(100% - ($padding__banner * 2));
 
@@ -226,13 +209,6 @@ $padding__banner: 85px;
 
     &__description {
       padding-left: $padding__banner;
-    }
-
-    &__button {
-      &:hover {
-        background-color: $color_grey_3;
-        transition: background-color linear 0.2s;
-      }
     }
 
     &__presentation {
@@ -271,7 +247,7 @@ $padding__banner: 85px;
 }
 
 @media screen and (min-width: $breakpoint_laptop_2) {
-  .bunner {
+  .banner {
     align-self: center;
     min-height: 740px;
     max-width: $max_width;
@@ -332,10 +308,6 @@ $padding__banner: 85px;
     &__text {
       font-size: 14px;
       line-height: 21px;
-    }
-
-    &__button {
-      padding: 26px 38px;
     }
 
     &__image {

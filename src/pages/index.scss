@@ -14,12 +14,15 @@
 /*Подключение стилей для main*/
 @import '../bloks/main/main.scss';
 
-@import '../bloks/bunner/bunner.scss';
+@import '../bloks/banner/banner.scss';
+@import '../bloks/button/button.scss';
 
 @import '../bloks/goods/goods.scss';
 @import '../bloks/title/title.scss';
 @import '../bloks/cards/cards.scss';
 @import '../bloks/card/card.scss';
+
+@import '../bloks/specification/specification.scss';
 
 @import '../bloks/subscribe/subscribe.scss';
 
