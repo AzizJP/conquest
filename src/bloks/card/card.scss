@@ -1,0 +1,175 @@
+$ellipse_gradient: #e2d0c4;
+$card_button_padding: 48px;
+$image_width_phone: 230px;
+$image_width_tablet: 260px;
+$image_width_laptop: 310px;
+$title_lh_phone: 16px;
+$title_lh_tablet: 20px;
+$title_lh_laptop: 24px;
+$title_mb_phone: 6px;
+$title_mb_tablet: 8px;
+$title_mb_laptop: 10px;
+$price_lh_phone: 12px;
+$price_lh_tablet: 14px;
+$price_lh_laptop: 16px;
+$card_padding_top-bot_phone: 20px;
+$card_padding_top-bot_tablet: 30px;
+$card_padding_top-bot_laptop: 40px;
+$card_ellipse_top_phone: $title_lh_phone + $title_mb_phone +
+  $price_lh_phone + $card_padding_top-bot_phone;
+$card_ellipse_top_tablet: $title_lh_tablet + $title_mb_tablet +
+  $price_lh_tablet + $card_padding_top-bot_tablet;
+$card_ellipse_top_laptop: $title_lh_laptop + $title_mb_laptop +
+  $price_lh_laptop + $card_padding_top-bot_laptop;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px 10px;
+  background-color: $color_card_background;
+
+  &__title {
+    margin: 0;
+    margin-bottom: $title_mb_phone;
+    @include serifFontSettings(
+      'Playfair Display',
+      700,
+      10px,
+      $title_lh_phone
+    );
+    letter-spacing: 0.03em;
+    color: $color_grey;
+  }
+
+  &__price {
+    margin: 0;
+    @include serifFontSettings('Prata', 400, 8px, $price_lh_phone);
+    color: $color_grey;
+  }
+
+  &__ellipse {
+    position: absolute;
+    top: $card_ellipse_top_phone;
+    width: $image_width_phone;
+    height: $image_width_phone;
+    background: linear-gradient(-90deg, #e9e3d4, #e2d0c400);
+    border-radius: 50%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: calc(100% - 1px);
+      height: calc(100% - 1px);
+      background: $color_card_background;
+      border-radius: 50%;
+    }
+  }
+
+  &__image {
+    width: $image_width_phone;
+    height: $image_width_phone;
+    position: relative;
+  }
+
+  &__button {
+    position: relative;
+    width: max-content;
+    padding: 0;
+    margin-top: 10px;
+    margin-left: $card_button_padding;
+    background-color: $color_card_background;
+    border: none;
+    @include serifFontSettings('Playfair Display', 400, 12px, 16px);
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -$card_button_padding;
+      top: 50%;
+      width: 30px;
+      height: 1px;
+      background-color: $color_grey_3;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_tablet_2) {
+  .card {
+    padding: 30px 20px;
+
+    &__title {
+      margin-bottom: $title_mb_tablet;
+      font-size: 12px;
+      line-height: $title_lh_tablet;
+    }
+
+    &__price {
+      font-size: 10px;
+      line-height: $price_lh_tablet;
+    }
+
+    &__ellipse {
+      top: $card_ellipse_top_tablet;
+      width: $image_width_tablet;
+      height: $image_width_tablet;
+    }
+
+    &__image {
+      width: $image_width_tablet;
+      height: $image_width_tablet;
+    }
+
+    &__button {
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_laptop) {
+  .card__button {
+    transition: opacity linear 0.2s;
+
+    &:hover {
+      opacity: 0.6;
+      transition: opacity linear 0.2s;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_laptop_2) {
+  .card {
+    padding: 40px 30px;
+
+    &__title {
+      margin-bottom: $title_mb_laptop;
+      font-size: 14px;
+      line-height: $title_lh_laptop;
+    }
+
+    &__price {
+      font-size: 12px;
+      line-height: $price_lh_laptop;
+    }
+
+    &__ellipse {
+      top: $card_ellipse_top_laptop;
+      width: $image_width_laptop;
+      height: $image_width_laptop;
+    }
+
+    &__image {
+      width: $image_width_laptop;
+      height: $image_width_laptop;
+    }
+
+    &__button {
+      margin-top: 21px;
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+}

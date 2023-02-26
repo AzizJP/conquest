@@ -1,0 +1,19 @@
+.title {
+  margin: 0;
+  width: max-content;
+  @include serifFontSettings('Playfair Display', 400, 20px, 24px);
+}
+
+@media screen and (min-width: $breakpoint_tablet) {
+  .title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (min-width: $breakpoint_laptop) {
+  .title {
+    font-size: 32px;
+    line-height: 43px;
+  }
+}

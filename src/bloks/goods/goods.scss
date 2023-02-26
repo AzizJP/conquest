@@ -1,0 +1,66 @@
+$goods_padding: 20px;
+
+.goods {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 20px $goods_padding;
+  width: calc(100% - ($goods_padding * 2));
+  max-width: $max_width;
+  gap: 10px;
+
+  &__title {
+    align-self: center;
+  }
+
+  &__button {
+    position: relative;
+    padding: 0;
+    align-self: end;
+    border: none;
+    background-color: white;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: $color_dark_2;
+    transition: opacity linear 0.2s;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -9px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: #c4c0b6;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_tablet) {
+  .goods {
+    padding: 40px $goods_padding;
+
+    &__button {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_laptop) {
+  .goods {
+    padding: 76px $goods_padding;
+
+    &__button {
+      font-size: 16px;
+      line-height: 19px;
+
+      &:hover {
+        opacity: 0.6;
+        transition: opacity linear 0.2s;
+      }
+    }
+  }
+}

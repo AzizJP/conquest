@@ -75,6 +75,8 @@ $padding__banner: 85px;
     background-color: $color_dark_2;
     border: none;
     max-width: 205px;
+    transition: background-color linear 0.2s;
+    cursor: pointer;
   }
 
   &__presentation {
@@ -224,6 +226,13 @@ $padding__banner: 85px;
 
     &__description {
       padding-left: $padding__banner;
+    }
+
+    &__button {
+      &:hover {
+        background-color: $color_grey_3;
+        transition: background-color linear 0.2s;
+      }
     }
 
     &__presentation {
