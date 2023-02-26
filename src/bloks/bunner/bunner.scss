@@ -1,0 +1,317 @@
+//Задаем переменные и mixin
+$padding__banner: 85px;
+
+@mixin ellipseParametrs($wth) {
+  width: $wth;
+  height: 2 * $wth;
+  border-radius: $wth 0 0 $wth;
+}
+
+//Стилизация сецкии
+.bunner {
+  display: flex;
+  position: relative;
+  padding-left: 10px;
+  max-height: 420px;
+  overflow: hidden;
+
+  &__ellipse {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(234, 227, 212, 0) 0%,
+      #eae3d4 100%
+    );
+    @include ellipseParametrs(250px);
+  }
+
+  &__description {
+    width: 50%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    z-index: 1;
+  }
+
+  &__title {
+    margin: 0;
+    @include serifFontSettings('Playfair Display', 400, 20px, 24px);
+  }
+
+  &__subtitle {
+    margin: 0;
+    @include serifFontSettings('Playfair Display', 400, 16px, 20px);
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__button {
+    padding: 15px 20px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+    background-color: $color_dark_2;
+    border: none;
+    max-width: 205px;
+  }
+
+  &__presentation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    overflow: hidden;
+    width: 50%;
+    max-width: 250px;
+
+    &_text {
+      margin: 0;
+      position: absolute;
+      @include serifFontSettings('Prata', 400, 10px, 12px);
+      z-index: 3;
+
+      &-top {
+        top: 20px;
+        left: 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          right: -30px;
+          top: 40%;
+          width: 20px;
+          height: 1px;
+          background-color: #8b8371;
+        }
+      }
+
+      &-down {
+        bottom: 20px;
+        left: 0;
+        max-width: 43px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          right: -30px;
+          top: 40%;
+          width: 20px;
+          height: 1px;
+          background-color: #8b8371;
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 300px;
+    height: auto;
+    z-index: 2;
+  }
+}
+
+//Стилизация при ширине экарана 600px
+@media screen and (min-width: $breakpoint_tablet) {
+  .bunner {
+    padding-left: 40px;
+
+    &__ellipse {
+      right: 70px;
+    }
+
+    &__title {
+      font-size: 30px;
+      line-height: 45px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    &__text {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__button {
+      padding: 20px 30px;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}
+
+//Стилизация при ширине экарана 768px
+@media screen and (min-width: $breakpoint_tablet_2) {
+  .bunner {
+    padding: 0 40px;
+
+    &__ellipse {
+      right: 160px;
+    }
+
+    &__presentation {
+      max-width: 370px;
+      justify-content: end;
+
+      &_text {
+        font-size: 16px;
+        line-height: 22px;
+
+        &-top {
+          top: 20px;
+          left: 0;
+
+          &:before {
+            right: -40px;
+            top: 50%;
+            width: 30px;
+          }
+        }
+
+        &-down {
+          bottom: 20px;
+          left: 0;
+          max-width: 70px;
+
+          &:before {
+            right: -40px;
+            top: 50%;
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Стилизация при ширине экарана 1024px
+@media screen and (min-width: $breakpoint_laptop) {
+  .bunner {
+    padding: 0 $padding__banner;
+    width: calc(100% - ($padding__banner * 2));
+
+    &__ellipse {
+      right: calc(250px + $padding__banner);
+    }
+
+    &__description {
+      padding-left: $padding__banner;
+    }
+
+    &__presentation {
+      padding-right: $padding__banner;
+      justify-content: end;
+
+      &_text {
+        font-size: 16px;
+        line-height: 22px;
+
+        &-top {
+          top: 20px;
+          left: 0;
+
+          &:before {
+            right: -40px;
+            top: 50%;
+            width: 30px;
+          }
+        }
+
+        &-down {
+          bottom: 20px;
+          left: 0;
+          max-width: 70px;
+
+          &:before {
+            right: -40px;
+            top: 50%;
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Стилизация при ширине экарана 1420px
+@media screen and (min-width: $breakpoint_laptop_2) {
+  .bunner {
+    align-self: center;
+    min-height: 740px;
+    max-width: $max_width;
+
+    &__ellipse {
+      top: -116px;
+      right: calc(330px + $padding__banner);
+      @include ellipseParametrs(500px);
+    }
+
+    &__presentation {
+      max-width: 500px;
+      overflow: visible;
+
+      &_text {
+        &-top {
+          top: 140px;
+          left: -90px;
+
+          &:before {
+            right: -70px;
+            top: 50%;
+            width: 50px;
+          }
+        }
+
+        &-down {
+          bottom: 110px;
+          left: 470px;
+          width: max-content;
+          max-width: none;
+
+          &:before {
+            left: -70px;
+            top: 50%;
+            width: 50px;
+          }
+        }
+      }
+    }
+
+    &__title {
+      font-size: 45px;
+      line-height: 60px;
+    }
+
+    &__subtitle {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    &__button {
+      padding: 26px 38px;
+    }
+
+    &__image {
+      width: 500px;
+    }
+  }
+}

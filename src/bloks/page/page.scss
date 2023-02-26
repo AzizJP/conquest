@@ -5,7 +5,9 @@ $color_grey: rgba(27, 26, 23, 0.82);
 $color_grey_2: rgba(255, 255, 255, 0.75);
 $breakpoint_mobile: 320px;
 $breakpoint_tablet: 600px;
+$breakpoint_tablet_2: 768px;
 $breakpoint_laptop: 1024px;
+$breakpoint_laptop_2: 1420px;
 $max_width: 1200px;
 
 @mixin serifFontSettings($ff, $fw, $fs, $lh) {
@@ -24,4 +26,5 @@ $max_width: 1200px;
   font-size: 14px;
   line-height: 16px;
   color: $color_black;
+  min-width: $breakpoint_mobile;
 }
