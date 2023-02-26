@@ -1,4 +1,3 @@
-//Задаем переменные и mixin
 $padding__banner: 85px;
 
 @mixin ellipseParametrs($wth) {
@@ -7,7 +6,6 @@ $padding__banner: 85px;
   border-radius: $wth 0 0 $wth;
 }
 
-//Стилизация сецкии
 .bunner {
   display: flex;
   position: relative;
@@ -28,6 +26,7 @@ $padding__banner: 85px;
   }
 
   &__description {
+    padding-left: 30px;
     width: 50%;
     display: flex;
     flex-grow: 1;
@@ -38,8 +37,19 @@ $padding__banner: 85px;
   }
 
   &__title {
+    position: relative;
     margin: 0;
     @include serifFontSettings('Playfair Display', 400, 20px, 24px);
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      width: 20px;
+      height: 1px;
+      background-color: $color_grey_3;
+    }
   }
 
   &__subtitle {
@@ -93,7 +103,7 @@ $padding__banner: 85px;
           top: 40%;
           width: 20px;
           height: 1px;
-          background-color: #8b8371;
+          background-color: $color_grey_3;
         }
       }
 
@@ -109,7 +119,7 @@ $padding__banner: 85px;
           top: 40%;
           width: 20px;
           height: 1px;
-          background-color: #8b8371;
+          background-color: $color_grey_3;
         }
       }
     }
@@ -122,7 +132,6 @@ $padding__banner: 85px;
   }
 }
 
-//Стилизация при ширине экарана 600px
 @media screen and (min-width: $breakpoint_tablet) {
   .bunner {
     padding-left: 40px;
@@ -154,13 +163,19 @@ $padding__banner: 85px;
   }
 }
 
-//Стилизация при ширине экарана 768px
 @media screen and (min-width: $breakpoint_tablet_2) {
   .bunner {
     padding: 0 40px;
 
     &__ellipse {
       right: 160px;
+    }
+
+    &__title {
+      &:before {
+        left: -40px;
+        width: 30px;
+      }
     }
 
     &__presentation {
@@ -198,7 +213,6 @@ $padding__banner: 85px;
   }
 }
 
-//Стилизация при ширине экарана 1024px
 @media screen and (min-width: $breakpoint_laptop) {
   .bunner {
     padding: 0 $padding__banner;
@@ -247,7 +261,6 @@ $padding__banner: 85px;
   }
 }
 
-//Стилизация при ширине экарана 1420px
 @media screen and (min-width: $breakpoint_laptop_2) {
   .bunner {
     align-self: center;
@@ -294,6 +307,12 @@ $padding__banner: 85px;
     &__title {
       font-size: 45px;
       line-height: 60px;
+
+      &:before {
+        left: -65px;
+        top: 55%;
+        width: 50px;
+      }
     }
 
     &__subtitle {
