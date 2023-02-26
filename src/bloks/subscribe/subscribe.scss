@@ -122,6 +122,14 @@ $padding_subscribe: 20px;
     &__messengers {
       margin-top: 78px;
     }
+
+    &__messenger {
+      transition: opacity linear 0.2s;
+      &:hover {
+        opacity: 0.6;
+        transition: opacity linear 0.2s;
+      }
+    }
   }
 }
 
