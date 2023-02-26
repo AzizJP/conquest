@@ -1,0 +1,140 @@
+$padding_subscribe: 20px;
+
+.subscribe {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px $padding_subscribe;
+  width: calc(100% - ($padding_subscribe * 2));
+  max-width: $max_width;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__text {
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: $color_dark_2;
+    max-width: 376px;
+  }
+
+  &__messengers {
+    display: flex;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__messenger {
+    display: block;
+    width: 23px;
+    height: 23px;
+
+    &_instagram {
+      background: url(../../images/instagram-logo.svg) no-repeat
+        center/contain;
+    }
+
+    &_facebook {
+      background: url(../../images/facebook-logo.svg) no-repeat
+        center/contain;
+    }
+
+    &_twitter {
+      background: url(../../images/twitter-logo.svg) no-repeat
+        center/contain;
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 10px;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 377px;
+  }
+}
+
+@media screen and (min-width: $breakpoint_tablet) {
+  .subscribe {
+    padding: 60px $padding_subscribe;
+
+    &__description {
+      gap: 20px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_tablet_2) {
+  .subscribe {
+    &__images {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    &__image {
+      &:nth-child(1) {
+        grid-area: 1 / 1 / 1 / 1;
+      }
+      &:nth-child(2) {
+        grid-area: 2 / 1 / 2 / 1;
+      }
+      &:nth-child(3) {
+        grid-area: 1 / 2 / 3 / 2;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint_laptop) {
+  .subscribe {
+    padding: 81px $padding_subscribe 90px;
+
+    &__description {
+      gap: 40px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 27px;
+    }
+
+    &__messengers {
+      margin-top: 78px;
+    }
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .subscribe {
+    justify-content: space-between;
+
+    &__description {
+      align-items: start;
+    }
+
+    &__text {
+      text-align: start;
+    }
+  }
+}
